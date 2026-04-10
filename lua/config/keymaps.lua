@@ -18,3 +18,8 @@ vim.keymap.set("i", "<S-Insert>", "<C-r>+")
 vim.keymap.set("c", "<S-Insert>", "<C-r>+")
 
 vim.keymap.set("n", "<leader>fs", "<cmd>w<cr>", { desc = "Save file" })
+
+-- 快捷键打开 Windows Terminal
+vim.keymap.set("n", "<leader>tt", function()
+  vim.fn.jobstart("wt -d " .. vim.fn.getcwd())
+end, { desc = "Open Windows Terminal" })

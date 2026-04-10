@@ -7,4 +7,16 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 --
---
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function(args)
+    local name = vim.api.nvim_buf_get_name(args.buf)
+
+    if name:find("lazygit") then
+      vim.schedule(function()
+        print("TermOpen trigger")
+        -- vim.cmd("startinsert")
+      end)
+    end
+  end,
+})
