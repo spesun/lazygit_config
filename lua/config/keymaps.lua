@@ -23,3 +23,6 @@ vim.keymap.set("n", "<leader>fs", "<cmd>w<cr>", { desc = "Save file" })
 vim.keymap.set("n", "<leader>tt", function()
   vim.fn.jobstart("wt -d " .. vim.fn.getcwd())
 end, { desc = "Open Windows Terminal" })
+
+-- 新建带名称的buffer
+vim.keymap.set("n", "<leader>tn", ":e tmp", { desc = "e command with filename" })
